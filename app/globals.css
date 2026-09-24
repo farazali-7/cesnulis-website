@@ -7,9 +7,20 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-source-serif);
+  --font-serif: var(--font-source-serif);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-source-serif);
+  --color-forest: var(--forest);
+  --color-emerald: var(--emerald);
+  --color-approval: var(--approval);
+  --color-positive: var(--positive);
+  --color-mint: var(--mint);
+  --color-ivory: var(--ivory);
+  --color-ink: var(--ink);
+  --color-sage: var(--sage);
+  --color-sage-muted: var(--sage-muted);
+  --color-gold: var(--gold);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,82 +60,644 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  /* Emerald Confirmation — brand palette */
+  --forest: #072e24;
+  --forest-deep: #05271f;
+  --emerald: #0d4938;
+  --approval: #178a57;
+  --positive: #20a568;
+  --mint: #e2f3e9;
+  --mint-lift: #edf8f1;
+  --ivory: #f7f5ee;
+  --ink: #15211c;
+  --sage: #c8dcd2;
+  --sage-muted: #789087;
+  --gold: #b69a55;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* shadcn semantic tokens mapped onto the brand palette */
+  --background: var(--forest);
+  --foreground: var(--ivory);
+  --card: var(--mint);
+  --card-foreground: var(--ink);
+  --popover: var(--emerald);
+  --popover-foreground: var(--ivory);
+  --primary: var(--approval);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--emerald);
+  --secondary-foreground: var(--ivory);
+  --muted: var(--sage);
+  --muted-foreground: var(--sage-muted);
+  --accent: var(--gold);
+  --accent-foreground: var(--forest);
+  --destructive: #d64b4b;
+  --border: rgba(247, 245, 238, 0.12);
+  --input: rgba(247, 245, 238, 0.12);
+  --ring: var(--positive);
+  --chart-1: var(--approval);
+  --chart-2: var(--positive);
+  --chart-3: var(--gold);
+  --chart-4: var(--emerald);
+  --chart-5: var(--forest);
+  --radius: 0.625rem;
+  --sidebar: var(--emerald);
+  --sidebar-foreground: var(--ivory);
+  --sidebar-primary: var(--approval);
+  --sidebar-primary-foreground: var(--ivory);
+  --sidebar-accent: var(--positive);
+  --sidebar-accent-foreground: var(--ivory);
+  --sidebar-border: rgba(247, 245, 238, 0.14);
+  --sidebar-ring: var(--positive);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
+
+  html {
+    @apply font-serif;
+    background: var(--forest);
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
+
+  a {
+    @apply no-underline;
+  }
+
+  ::selection {
+    background: var(--approval);
+    color: var(--ivory);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Coming-soon page.
+   Three zones: top register, hero nucleus, bottom register.
+   --r  scales vertical rhythm on short viewports
+   --rs scales the monogram and wordmark on short viewports
+   --d  entrance travel distance, reduced on small screens
+--------------------------------------------------------------------------- */
+
+@layer components {
+  .brand-shell {
+    --r: 1;
+    --rs: 1;
+    --d: 10px;
+
+    position: relative;
+    isolation: isolate;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    background: var(--forest);
+  }
+
+  @media (min-width: 768px) {
+    .brand-shell {
+      height: 100dvh;
+      overflow: hidden;
+    }
+  }
+
+  /* Landscape tablet and short laptops: compact the rhythm, not the content. */
+  @media (min-width: 768px) and (max-height: 820px) {
+    .brand-shell {
+      --r: 0.8;
+      --rs: 0.92;
+    }
+  }
+
+  @media (min-width: 768px) and (max-height: 700px) {
+    .brand-shell {
+      --r: 0.6;
+      --rs: 0.78;
+    }
+  }
+
+  /* Mobile: shorter travel, tighter rhythm so 320x568 still lands in one view. */
+  @media (max-width: 640px) {
+    .brand-shell {
+      --r: 0.85;
+      --d: 6px;
+    }
+  }
+
+  .brand-atmosphere {
+    position: absolute;
+    inset: -10%;
+    z-index: -2;
+    background: radial-gradient(
+      120% 92% at 50% 32%,
+      var(--emerald) 0%,
+      #082f25 46%,
+      var(--forest-deep) 100%
+    );
+  }
+
+  .brand-grain {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.045;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* --- registers -------------------------------------------------------- */
+
+  .register-text {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: 0.625rem;
+    line-height: 1.4;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  @media (min-width: 1024px) {
+    .register-text {
+      font-size: 0.6875rem;
+    }
+  }
+
+  .register-rule {
+    height: 1px;
+    width: 100%;
+    transform-origin: center;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(247, 245, 238, 0.16) 16%,
+      rgba(247, 245, 238, 0.16) 84%,
+      transparent
+    );
+  }
+
+  /* --- hero nucleus ----------------------------------------------------- */
+
+  .monogram {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: calc(3rem * var(--rs));
+    height: calc(3rem * var(--rs));
+  }
+
+  .monogram-ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 1;
+    opacity: 0.7;
+  }
+
+  .monogram-ring circle {
+    stroke-dasharray: 145;
+    transform: rotate(-90deg);
+    transform-origin: center;
+  }
+
+  /* Both initials inside the ring: smaller than a single letter would be,
+     with the gap between them tightened so the pair still reads as one mark. */
+  .monogram-letter {
+    font-size: calc(0.875rem * var(--rs));
+    line-height: 1;
+    letter-spacing: 0.03em;
+    word-spacing: -0.08em;
+    text-indent: 0.03em;
+    white-space: nowrap;
+    color: var(--ivory);
+  }
+
+  /* Name lockup: the given name sits as a tracked gold line above the
+     surname, so the surname keeps its scale and the block stays one view tall. */
+  .wordmark {
+    margin-top: calc(1.5rem * var(--r));
+    font-size: calc(clamp(2.125rem, 5.6vw, 4.5rem) * var(--rs));
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 0.05em;
+    text-indent: 0.05em;
+    color: var(--ivory);
+  }
+
+  .wordmark-given {
+    display: block;
+    margin-bottom: calc(0.55rem * var(--r));
+    font-size: calc(clamp(0.8125rem, 1.15vw, 1.0625rem) * var(--rs));
+    line-height: 1;
+    letter-spacing: 0.44em;
+    /* Offsets the trailing letter-space so the tracked line stays optically centred. */
+    text-indent: 0.44em;
+    color: var(--gold);
+  }
+
+  .wordmark-family {
+    display: block;
+  }
+
+  .wordmark-letter {
+    display: inline-block;
+    will-change: transform, opacity, filter;
+  }
+
+  .gold-rule {
+    margin-top: calc(1.375rem * var(--r));
+    height: 1px;
+    width: clamp(5rem, 9vw, 7.5rem);
+    transform-origin: center;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .lead {
+    margin-top: calc(1.5rem * var(--r));
+    font-size: clamp(1.25rem, 1.9vw, 1.75rem);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    color: var(--ivory);
+  }
+
+  .copy {
+    margin-top: calc(1.125rem * var(--r));
+    max-width: 42ch;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--sage);
+    text-wrap: pretty;
+  }
+
+  @media (min-width: 1280px) {
+    .copy {
+      font-size: 1.0625rem;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .copy {
+      font-size: 1.125rem;
+    }
+  }
+
+  .contact {
+    margin-top: calc(2.25rem * var(--r));
+    display: block;
+    width: 100%;
+    max-width: 27.5rem;
+    border-radius: var(--radius-xl);
+  }
+
+  @media (min-width: 1600px) {
+    .contact {
+      max-width: 28.75rem;
+    }
+  }
+
+  .contact:focus-visible {
+    outline: 2px solid var(--positive);
+    outline-offset: 3px;
+  }
+
+  .status {
+    margin-top: calc(2rem * var(--r));
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: 0.625rem;
+    line-height: 1.3;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  @media (min-width: 1024px) {
+    .status {
+      font-size: 0.6875rem;
+    }
+  }
+
+  .status-dot {
+    position: relative;
+    display: inline-flex;
+    height: 0.375rem;
+    width: 0.375rem;
+    flex: none;
+    border-radius: 9999px;
+    background: var(--positive);
+  }
+
+  .status-ping {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: var(--positive);
+  }
+
+  /* --- language switcher ------------------------------------------------ */
+
+  .lang {
+    position: relative;
+    flex: none;
+  }
+
+  /* A gold-framed chip: the register is all bare sage text, so the selector
+     needs a border and a warm lift to read as a control rather than a label. */
+  .lang-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.3125rem;
+    border: 1px solid rgba(182, 154, 85, 0.45);
+    border-radius: 9999px;
+    background: rgba(182, 154, 85, 0.12);
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: 0.625rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--ivory);
+    cursor: pointer;
+    transition:
+      background-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* 320px spends every pixel of the register on the clock; above that the
+     chip can breathe. */
+  @media (min-width: 400px) {
+    .lang-trigger {
+      padding: 0.3125rem 0.5625rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lang-trigger {
+      font-size: 0.6875rem;
+    }
+  }
+
+  .lang-trigger:hover,
+  .lang-trigger[aria-expanded="true"] {
+    border-color: var(--gold);
+    background: rgba(182, 154, 85, 0.22);
+  }
+
+  .lang-trigger:focus-visible {
+    outline: 2px solid var(--positive);
+    outline-offset: 3px;
+    border-radius: 9999px;
+  }
+
+  /* Trailing letter-space trimmed so the chevron sits optically tight. */
+  .lang-code {
+    letter-spacing: 0.22em;
+    margin-right: -0.22em;
+  }
+
+  .lang-chevron {
+    display: none;
+    height: 0.625rem;
+    width: 0.625rem;
+    flex: none;
+    color: var(--gold);
+    transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* 320px phones need every pixel of the register line for the clock. */
+  @media (min-width: 400px) {
+    .lang-chevron {
+      display: block;
+    }
+  }
+
+  .lang-trigger[aria-expanded="true"] .lang-chevron {
+    transform: rotate(180deg);
+  }
+
+  .lang-menu {
+    position: absolute;
+    top: calc(100% + 0.625rem);
+    right: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    min-width: 8.75rem;
+    padding: 0.3125rem;
+    border: 1px solid rgba(247, 245, 238, 0.1);
+    border-radius: var(--radius-md);
+    background: rgba(5, 39, 31, 0.95);
+    box-shadow:
+      0 20px 44px -26px rgba(0, 0, 0, 0.8),
+      inset 0 1px 0 0 rgba(247, 245, 238, 0.05);
+    animation: brand-menu 200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @supports (backdrop-filter: blur(12px)) {
+    .lang-menu {
+      background: rgba(5, 39, 31, 0.82);
+      backdrop-filter: blur(12px);
+    }
+  }
+
+  .lang-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 0.4375rem 0.5625rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: 0.625rem;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-align: left;
+    cursor: pointer;
+    transition:
+      background-color 160ms ease-out,
+      color 160ms ease-out;
+  }
+
+  .lang-option:hover,
+  .lang-option:focus-visible {
+    background: rgba(247, 245, 238, 0.06);
+    color: var(--ivory);
+    outline: none;
+  }
+
+  .lang-option[aria-checked="true"] {
+    color: var(--ivory);
+  }
+
+  .lang-option-code {
+    flex: none;
+    color: var(--sage-muted);
+    transition: color 160ms ease-out;
+  }
+
+  .lang-option[aria-checked="true"] .lang-option-code {
+    color: var(--gold);
+  }
+}
+
+
+/* ---------------------------------------------------------------------------
+   Entrance sequence. One orchestrated arrival, fires once, never replays and
+   never loops. Every animated node is present and interactive from t=0.
+--------------------------------------------------------------------------- */
+
+@keyframes brand-bloom {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes brand-rule {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes brand-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--d), 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes brand-glyph {
+  from {
+    opacity: 0;
+    transform: translate3d(0, calc(var(--d) + 4px), 0);
+    filter: blur(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes brand-draw {
+  from {
+    stroke-dashoffset: 145;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes brand-ping {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+@keyframes brand-menu {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -4px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.a-bloom,
+.a-rule,
+.a-rise,
+.a-glyph,
+.a-draw,
+.a-ping {
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.a-bloom {
+  animation-name: brand-bloom;
+  animation-duration: 1200ms;
+}
+
+.a-rule {
+  animation-name: brand-rule;
+  animation-duration: 700ms;
+}
+
+.a-rise {
+  animation-name: brand-rise;
+  animation-duration: 520ms;
+}
+
+.a-glyph {
+  animation-name: brand-glyph;
+  animation-duration: 620ms;
+}
+
+.a-draw {
+  animation-name: brand-draw;
+  animation-duration: 800ms;
+}
+
+.a-ping {
+  animation-name: brand-ping;
+  animation-duration: 900ms;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .a-bloom,
+  .a-rule,
+  .a-rise,
+  .a-glyph,
+  .a-draw {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .monogram-ring circle {
+    stroke-dashoffset: 0 !important;
+  }
+
+  .a-ping {
+    display: none;
+  }
+
+  .lang-menu {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
   }
 }
