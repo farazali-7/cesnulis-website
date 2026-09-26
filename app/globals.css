@@ -263,10 +263,8 @@
     transform-origin: center;
   }
 
-  /* Both initials inside the ring: smaller than a single letter would be,
-     with the gap between them tightened so the pair still reads as one mark. */
   .monogram-letter {
-    font-size: calc(0.875rem * var(--rs));
+    font-size: calc(1.125rem * var(--rs));
     line-height: 1;
     letter-spacing: 0.03em;
     word-spacing: -0.08em;
@@ -275,8 +273,6 @@
     color: var(--ivory);
   }
 
-  /* Name lockup: the given name sits as a tracked gold line above the
-     surname, so the surname keeps its scale and the block stays one view tall. */
   .wordmark {
     margin-top: calc(1.5rem * var(--r));
     font-size: calc(clamp(2.125rem, 5.6vw, 4.5rem) * var(--rs));
@@ -285,17 +281,6 @@
     letter-spacing: 0.05em;
     text-indent: 0.05em;
     color: var(--ivory);
-  }
-
-  .wordmark-given {
-    display: block;
-    margin-bottom: calc(0.55rem * var(--r));
-    font-size: calc(clamp(0.8125rem, 1.15vw, 1.0625rem) * var(--rs));
-    line-height: 1;
-    letter-spacing: 0.44em;
-    /* Offsets the trailing letter-space so the tracked line stays optically centred. */
-    text-indent: 0.44em;
-    color: var(--gold);
   }
 
   .wordmark-family {

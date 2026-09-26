@@ -7,10 +7,11 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { LocalTime } from "@/components/local-time";
 import { Card, CardContent } from "@/components/ui/card";
 
-const MONOGRAM = "F. K.";
-const GIVEN_NAME = "FERHAT";
-const FAMILY_NAME = "KARABULUT";
-const EMAIL = "info@karabulut.ch";
+const BRAND = "CESNULIS.ORG";
+const MONOGRAM = "C";
+const WORDMARK = "CESNULIS";
+const DOMAIN = "cesnulis.org";
+const EMAIL = "info@cesnulis.org";
 
 /** Entrance choreography, in ms. One arrival, front to back. */
 const CUE = {
@@ -21,9 +22,7 @@ const CUE = {
   monogram: 260,
   monogramRing: 300,
   monogramLetter: 520,
-  givenName: 545,
-  givenNameStep: 40,
-  wordmark: 580,
+  wordmark: 560,
   wordmarkStep: 50,
   goldRule: 1000,
   lead: 1070,
@@ -54,7 +53,7 @@ export default function Home() {
                 className="size-1.5 flex-none rounded-full bg-gold"
                 aria-hidden="true"
               />
-              karabulut.ch
+              {DOMAIN}
             </p>
 
             <div className="flex items-center gap-1.5 min-[400px]:gap-2 sm:gap-3">
@@ -104,28 +103,12 @@ export default function Home() {
           </span>
 
           <h1 className="wordmark">
-            <span className="sr-only">
-              {GIVEN_NAME} {FAMILY_NAME}
-            </span>
-
-            <span className="wordmark-given" aria-hidden="true">
-              {Array.from(GIVEN_NAME).map((letter, index) => (
-                <span
-                  key={`given-${letter}-${index}`}
-                  className="wordmark-letter a-glyph"
-                  style={{
-                    animationDelay: `${CUE.givenName + index * CUE.givenNameStep}ms`,
-                  }}
-                >
-                  {letter}
-                </span>
-              ))}
-            </span>
+            <span className="sr-only">{WORDMARK}</span>
 
             <span className="wordmark-family" aria-hidden="true">
-              {Array.from(FAMILY_NAME).map((letter, index) => (
+              {Array.from(WORDMARK).map((letter, index) => (
                 <span
-                  key={`family-${letter}-${index}`}
+                  key={`wordmark-${letter}-${index}`}
                   className="wordmark-letter a-glyph"
                   style={{
                     animationDelay: `${CUE.wordmark + index * CUE.wordmarkStep}ms`,
@@ -208,11 +191,11 @@ export default function Home() {
             style={{ animationDelay: `${CUE.colophon}ms` }}
           >
             <address className="register-text not-italic">
-              Ferhat Karabulut <span aria-hidden="true">·</span> {t.origin}
+              {BRAND} <span aria-hidden="true">·</span> {t.origin}
             </address>
 
             <p className="register-text">
-              © {year} Ferhat Karabulut. {t.rights}
+              © {year} {BRAND}. {t.rights}
             </p>
           </div>
         </footer>

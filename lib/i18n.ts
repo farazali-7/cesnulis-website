@@ -7,7 +7,7 @@
  * React state (see `components/language-provider.tsx`) and the dictionaries
  * below are the single source of truth for every visible string.
  *
- * Brand tokens — the KARABULUT wordmark, karabulut.ch, the email address —
+ * Brand tokens — the CESNULIS.ORG wordmark, cesnulis.org, the email address —
  * are deliberately absent: they read the same in all three languages.
  */
 
@@ -18,7 +18,7 @@ export type Locale = (typeof LOCALES)[number];
 
 export const DEFAULT_LOCALE: Locale = "de";
 
-export const LOCALE_STORAGE_KEY = "karabulut.locale";
+export const LOCALE_STORAGE_KEY = "cesnulis.locale";
 
 /** Code shown in the register, endonym shown in the menu. */
 export const LOCALE_META: Record<Locale, { code: string; name: string }> = {
@@ -52,7 +52,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     city: "Zurich",
     localTime: "Local time in Zurich",
     lead: "New website in preparation.",
-    copy: "This website is currently being redesigned. For enquiries, reach Ferhat Karabulut directly by email.",
+    copy: "This website is currently being redesigned. For enquiries, reach CESNULIS.ORG directly by email.",
     contactEyebrow: "Direct contact",
     contactAction: (email) => `Send an email to ${email}`,
     statusDomain: "Domain active",
@@ -65,7 +65,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     city: "Zürich",
     localTime: "Ortszeit in Zürich",
     lead: "Neue Website in Vorbereitung.",
-    copy: "Diese Website wird derzeit neu gestaltet. Für Anfragen erreichen Sie Ferhat Karabulut direkt per E-Mail.",
+    copy: "Diese Website wird derzeit neu gestaltet. Für Anfragen erreichen Sie CESNULIS.ORG direkt per E-Mail.",
     contactEyebrow: "Direkter Kontakt",
     contactAction: (email) => `E-Mail an ${email} senden`,
     statusDomain: "Domain aktiv",
@@ -78,7 +78,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     city: "Zurich",
     localTime: "Heure locale à Zurich",
     lead: "Nouveau site web en préparation.",
-    copy: "Ce site est en cours de refonte. Pour toute demande, contactez Ferhat Karabulut directement par e-mail.",
+    copy: "Ce site est en cours de refonte. Pour toute demande, contactez CESNULIS.ORG directement par e-mail.",
     contactEyebrow: "Contact direct",
     contactAction: (email) => `Envoyer un e-mail à ${email}`,
     statusDomain: "Domaine actif",

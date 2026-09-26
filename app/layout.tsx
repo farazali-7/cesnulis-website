@@ -18,16 +18,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KARABULUT — Neue Website in Vorbereitung",
+  title: "CESNULIS.ORG — Neue Website in Vorbereitung",
   description:
-    "Ferhat Karabulut, Zürich. Die neue Website ist in Vorbereitung. Anfragen per E-Mail an info@karabulut.ch.",
-  metadataBase: new URL("https://karabulut.ch"),
+    "CESNULIS.ORG, Zürich. Die neue Website ist in Vorbereitung. Anfragen per E-Mail an info@cesnulis.org.",
+  metadataBase: new URL("https://cesnulis.org"),
   openGraph: {
-    title: "KARABULUT — Neue Website in Vorbereitung",
+    title: "CESNULIS.ORG — Neue Website in Vorbereitung",
     description:
-      "Ferhat Karabulut, Zürich. Anfragen per E-Mail an info@karabulut.ch.",
-    url: "https://karabulut.ch",
-    siteName: "KARABULUT",
+      "CESNULIS.ORG, Zürich. Anfragen per E-Mail an info@cesnulis.org.",
+    url: "https://cesnulis.org",
+    siteName: "CESNULIS.ORG",
     locale: "de_CH",
     type: "website",
   },
@@ -39,7 +39,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="de"
       className={`${sourceSerif.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full">
+      {/* Browser extensions (e.g. ColorZilla's cz-shortcut-listen) inject
+          attributes on <body> before React hydrates. This only silences
+          attribute mismatches on this one element, not its children. */}
+      <body className="min-h-full" suppressHydrationWarning>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
